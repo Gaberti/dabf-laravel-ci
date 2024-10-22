@@ -21,7 +21,8 @@ class ExampleTest extends TestCase
     {
         $user = User::create([
             'name' => 'test123',
-            'email' => 'test123@mail.com'
+            'email' => 'test123@mail.com',
+            'password' => bcrypt('test123')
         ]);
 
         $this->assertNotNull($user->name);
@@ -33,7 +34,8 @@ class ExampleTest extends TestCase
     {
         User::create([
             'name' => 'test1234',
-            'email' => 'test1234@mail.com'
+            'email' => 'test1234@mail.com',
+            'password' => bcrypt('test1234')
         ]);
 
         $this->assertDatabaseHas('users', [
